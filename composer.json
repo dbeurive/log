@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "name": "dbeurive/log",
+  "description": "This package implements a simple logging service that writes messages into files",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Denis BEURIVE",
+      "email": "denis.beurive@gmail.com"
+    }
+  ],
+  "keywords": ["LOG", "File"],
+  "autoload": {
+    "psr-4": {
+      "dbeurive\\Log\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=5.6.0"
+  },
+  "require-dev": {
+  },
+  "archive": {
+    "exclude": ["phpunit.xml", "examples"]
+  }
+}
