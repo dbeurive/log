@@ -30,9 +30,10 @@ class Logger
     const LEVEL_FATAL   = 0;
     const LEVEL_ERROR   = 1;
     const LEVEL_WARNING = 2;
-    const LEVEL_INFO    = 3;
-    const LEVEL_DATA    = 4;
-    const LEVEL_DEBUG   = 5;
+    const LEVEL_SUCCESS = 3;
+    const LEVEL_INFO    = 4;
+    const LEVEL_DATA    = 5;
+    const LEVEL_DEBUG   = 6;
 
     /** @var string Path to the LOG file. */
     private $__logFilePath;
@@ -52,6 +53,7 @@ class Logger
      *        - Logger::LEVEL_FATAL
      *        - Logger::LEVEL_ERROR
      *        - Logger::LEVEL_WARNING
+     *        - Logger::LEVEL_SUCCESS
      *        - Logger::LEVEL_INFO
      *        - Logger::LEVEL_DATA
      *        - Logger::LEVEL_DEBUG
@@ -59,6 +61,7 @@ class Logger
      * @see Logger::LEVEL_FATAL
      * @see Logger::LEVEL_ERROR
      * @see Logger::LEVEL_WARNING
+     * @see Logger::LEVEL_SUCCESS
      * @see Logger::LEVEL_INFO
      * @see Logger::LEVEL_DATA
      * @see Logger::LEVEL_DEBUG
@@ -148,6 +151,17 @@ class Logger
      */
     public function warning($in_message) {
         $this->__log(self::LEVEL_WARNING, $in_message);
+        return $this;
+    }
+
+    /**
+     * Log a success message.
+     * @param string $in_message Message to log.
+     * @return $this
+     * @throws \Exception
+     */
+    public function succes($in_message) {
+        $this->__log(self::LEVEL_SUCCESS, $in_message);
         return $this;
     }
 

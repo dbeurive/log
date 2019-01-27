@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "name": "dbeurive/log",
   "description": "This package implements a simple logging service that writes messages into files",
   "license": "MIT",

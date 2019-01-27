@@ -23,6 +23,7 @@ This package implements a simple logging service that writes messages into files
     // * Logger::LEVEL_FATAL
     // * Logger::LEVEL_ERROR
     // * Logger::LEVEL_WARNING
+    // * Logger::LEVEL_SUCCESS
     // * Logger::LEVEL_INFO
     // * Logger::LEVEL_DATA
     // * Logger::LEVEL_DEBUG
@@ -35,6 +36,7 @@ This package implements a simple logging service that writes messages into files
     $logger->fatal("This is a fatal error");
     $logger->error("This is a standard error");
     $logger->warning("This is a warning");
+    $logger->success("This is a success");
     $logger->info("This is a informative message");
     $logger->info("This is a multiline informative message\nother line.");
     
@@ -101,8 +103,9 @@ From your composer.json file:
   * `Logger::LEVEL_FATAL`: only messages tagged "FATAL" will be printed to the LOG file.
   * `Logger::LEVEL_ERROR`: only messages tagged "FATAL" and "ERROR" will be printed to the LOG file.
   * `Logger::LEVEL_WARNING`: only messages tagged "FATAL", "ERROR" and "WARNING" will be printed to the LOG file.
-  * `Logger::LEVEL_INFO`: only messages tagged "FATAL", "ERROR", "WARNING" and "INFO" will be printed to the LOG file.
-  * `Logger::LEVEL_DATA`: only messages tagged "FATAL", "ERROR", "WARNING", "INFO" and "DATA" will be printed to the LOG file.
+  * `Logger::LEVEL_SUCCESS`: only messages tagged "FATAL", "ERROR", "WARNING" and "SUCCESS" will be printed to the LOG file.
+  * `Logger::LEVEL_INFO`: only messages tagged "FATAL", "ERROR", "WARNING", "SUCCESS" and "INFO" will be printed to the LOG file.
+  * `Logger::LEVEL_DATA`: only messages tagged "FATAL", "ERROR", "WARNING", "SUCCESS", "INFO" and "DATA" will be printed to the LOG file.
   * `Logger::LEVEL_DEBUG`: all messages will be printed to the LOG file.
 * `$in_opt_session_id`: optional session ID. This string will be added to all lines of LOGs.
 
@@ -113,6 +116,7 @@ From your composer.json file:
 * `fatal(string $in_message)`: log a fatal error.
 * `error(string $in_message)`: log ane error error.
 * `warning(string $in_message)`: log a warning message.
+* `success(string $in_message)`: log a success message.
 * `info(string $in_message)`: log an informative message.
 * `data(mixed $in_message)`: log a message (string, numerical value or boolean) or a data (array, object or resource).
 * `debug(string $in_message)`: log a debug message.
