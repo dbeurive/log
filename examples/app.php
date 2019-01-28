@@ -66,3 +66,18 @@ $logger->data("This is a data"); // Not written
 $logger->data(array('a' => 1)); // Not written
 $logger->debug('This is a debug'); // Not written
 
+// Illustrate the use of Logger::getLevelFromName().
+
+$logger = new Logger(__DIR__ . DIRECTORY_SEPARATOR . 'log-info-session.log',
+    Logger::getLevelFromName('INFO'),
+    '123');
+
+$logger->fatal("This is a fatal error");
+$logger->error("This is a standard error");
+$logger->warning("This is a warning");
+$logger->info("This is a informative message");
+$logger->info("This is a multiline informative message\nother line.");
+$logger->data("This is a data"); // Not written
+$logger->data(array('a' => 1)); // Not written
+$logger->debug('This is a debug'); // Not written
+

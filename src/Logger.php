@@ -160,7 +160,7 @@ class Logger
      * @return $this
      * @throws \Exception
      */
-    public function succes($in_message) {
+    public function success($in_message) {
         $this->__log(self::LEVEL_SUCCESS, $in_message);
         return $this;
     }
@@ -263,4 +263,30 @@ class Logger
         }
         return $this->__levels[$in_value];
     }
+
+    /**
+     * Return the integer value that represents a given level name, identified by its name.
+     * @param string $in_level_name Name of the level.
+     * @return bool|int If the given name identifies a level, then the method returns the corresponding integer value.
+     *         Otherwise, the method returns the value false.
+     */
+    static public function getLevelFromName($in_level_name) {
+        $in_level_name = strtoupper($in_level_name);
+        $list = array(
+            'FATAL'   => Logger::LEVEL_FATAL,
+            'ERROR'   => Logger::LEVEL_ERROR,
+            'WARNING' => Logger::LEVEL_WARNING,
+            'SUCCESS' => Logger::LEVEL_SUCCESS,
+            'INFO'    => Logger::LEVEL_INFO,
+            'DATA'    => Logger::LEVEL_DATA,
+            'DEBUG'   => Logger::LEVEL_DEBUG
+        );
+        if (! array_key_exists($in_level_name, $list)) {
+            return false;
+        }
+        return $list[$in_level_name];
+    }
+
+
+
 }

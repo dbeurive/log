@@ -126,6 +126,8 @@ From your composer.json file:
 * `needLinearization(string $in_text)`: test whether a text needs to be linearised or not.
 * `linearize(string $in_text)`: linearize a given text.
 * `delinearize(string $in_text)`: delinearize a given text.
+* `getLevelFromName($in_level_name)`: Return the integer value that represents a given level name, identified by its name. 
+
 
 The [API](src/Logger.php) is very simple, heavily documented, and you can see [this example](examples/app.php).
 
