@@ -59,12 +59,12 @@ The logger produces logs that look like:
     
 The timestamp format is "`YYYYMMDDHHMMSS`":
 
-* `YYYY`: four digit representation for the year.
-* `MM`: two digit representation of the month (with leading zeros).
-* `DD`: two-digit day of the month (with leading zeros).
-* `HH`: two digit representation of the hour in 24-hour format (with leading zeros).
-* `MM`: two digit representation of the minute (with leading zeros).
-* `SS`: two digit representation of the second (with leading zeros).
+* `YYYY`: four-digit representation for the year.
+* `MM`: two-digit representation of the month (with leading zeros).
+* `DD`: two-digit representation of the day of the month (with leading zeros).
+* `HH`: two-digit representation of the hour in 24-hour format (with leading zeros).
+* `MM`: two-digit representation of the minute (with leading zeros).
+* `SS`: two-digit representation of the second (with leading zeros).
     
 If no session is specified, then the Logger constructor creates a session ID by calling `uniqid()`.
 
