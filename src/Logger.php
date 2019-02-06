@@ -35,12 +35,12 @@ class Logger
     const LEVEL_DATA    = 5;
     const LEVEL_DEBUG   = 6;
 
+    /** @var array List of LOG levels. */
+    static private $__levels;
     /** @var string Path to the LOG file. */
     private $__logFilePath;
     /** @var int The LOG level. */
     private $__level;
-    /** @var array List of LOG levels. */
-    private $__levels;
     /** @var string the session's ID. */
     private $__sessionId;
     /** @var string The sequence of characters that represents a new line. */
@@ -70,7 +70,7 @@ class Logger
     public function __construct($in_path, $in_level, $in_opt_session_id=null) {
         $this->__logFilePath = $in_path;
         $this->__level = $in_level;
-        $this->__levels = self::__getLevels();
+        self::$__levels = self::__getLevels();
         $this->__sessionId = is_null($in_opt_session_id) ? $this->__getSessionId() : $in_opt_session_id;
     }
 
@@ -100,7 +100,7 @@ class Logger
         if ($in_level > $this->__level) {
             return;
         }
-        $in_level = $this->__getLevelTag($in_level);
+        $in_level = self::getLevelFromNumericalValue($in_level);
         $ss = $this->__sessionId;
         $tt = strftime('%Y%m%d%-H%M%S');
         $linearized = false;
@@ -257,11 +257,11 @@ class Logger
      * @param int $in_value Integer's value that represents the LOG level.
      * @return string The function returns the name of the LOG's level.
      */
-    private function __getLevelTag($in_value) {
-        if (! array_key_exists($in_value, $this->__levels)) {
+    static public function getLevelFromNumericalValue($in_value) {
+        if (! array_key_exists($in_value, self::$__levels)) {
             return 'XXXX';
         }
-        return $this->__levels[$in_value];
+        return self::$__levels[$in_value];
     }
 
     /**
