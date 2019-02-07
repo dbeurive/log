@@ -110,7 +110,7 @@ class Logger
             $linearized = true;
         }
 
-        if (false === file_put_contents($this->__logFilePath, sprintf("%s %s %s %s %s %s",
+        if (false === @file_put_contents($this->__logFilePath, sprintf("%s %s %s %s %s %s",
                 $tt,
                 $ss,
                 $in_level,
