@@ -102,7 +102,7 @@ class Logger
         }
         $in_level = self::getLevelFromNumericalValue($in_level);
         $ss = $this->__sessionId;
-        $tt = strftime('%Y%m%d%-H%M%S');
+        $tt = strftime('%Y%m%d%H%M%S');
         $linearized = false;
 
         if (self::needLinearization($in_message)) {
